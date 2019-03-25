@@ -40,7 +40,7 @@ const CreatePin = ({ classes }) => {
           multiline
           rows="6"
           margin="normal"
-          fullwidth
+          fullwidth="true"
           variant="outlined"
         />
       </div>
