@@ -1,4 +1,7 @@
-export default function reducer(state, { type, payload }) {
+export default function reducer(state, {
+  type,
+  payload
+}) {
   switch (type) {
     case 'LOGIN_USER':
       return {
@@ -29,6 +32,11 @@ export default function reducer(state, { type, payload }) {
         ...state,
         draft: payload
       };
+    case "DELETE_DRAFT":
+      return {
+        ...state,
+        draft: null
+      }
 
     default:
       return state;
