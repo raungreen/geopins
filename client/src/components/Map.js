@@ -5,6 +5,8 @@ import { withStyles } from '@material-ui/core/styles';
 // import Typography from "@material-ui/core/Typography";
 // import DeleteIcon from "@material-ui/icons/DeleteTwoTone";
 
+import { useClient } from '../client';
+import { GET_PINS_QUERY } from '../graphql/queries';
 import PinIcon from './PinIcon';
 import Blog from './Blog';
 import Context from '../context';
@@ -22,6 +24,7 @@ const Map = ({ classes }) => {
   useEffect(() => {
     getUserPosition();
   }, []);
+  useEffect(() => {});
 
   const getUserPosition = () => {
     if ('geolocation' in navigator) {
@@ -33,12 +36,13 @@ const Map = ({ classes }) => {
     }
   };
 
-  const handleMapClick = ({ lnglat, leftButton }) => {
+  const handleMapClick = ({ lngLat, leftButton }) => {
     if (!leftButton) return;
     if (!state.draft) {
       dispatch({ type: 'CREATE_DRAFT' });
     }
-    const [longitude, latitude] = lnglat;
+
+    const [longitude, latitude] = lngLat;
     dispatch({
       type: 'UPDATE_DRAFT_LOCATION',
       payload: { longitude, latitude }
