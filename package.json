@@ -16,7 +16,8 @@
     "google-auth-library": "^3.1.1",
     "graphql": "^14.1.1",
     "heroku": "^7.22.7",
-    "mongoose": "^5.4.19"
+    "mongoose": "^5.4.19",
+    "now": "^15.0.1"
   },
   "devDependencies": {
     "nodemon": "^1.18.10"
